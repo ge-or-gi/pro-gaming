@@ -15,5 +15,5 @@
 </mat-dialog-content>
 <mat-dialog-actions align="end">
   <button mat-button mat-dialog-close>Close</button>
-  <button mat-button cdkFocusInitial>Add to Favorites <mat-icon>favorite</mat-icon></button>
+  <button mat-button cdkFocusInitial (click)="handleFavorites(book.url)">{{isFavorites ? 'Remove form Favorites':'Add to Favorites'}} <mat-icon [color]="isFavorites ? 'primary' : ''">favorite</mat-icon></button>
 </mat-dialog-actions>

@@ -11,6 +11,6 @@ export class ListService {
   constructor(private readonly http: HttpClient) { }
 
   getList(): Observable<Book[]>{
-    return this.http.get<Book[]>('https://anapioficeandfire.com/api/books/')
+    return this.http.get<Book[]>('https://www.anapioficeandfire.com/api/books/')
   }
 }

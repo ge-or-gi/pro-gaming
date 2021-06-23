@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CharacterComponent } from './character.component';
 import {MatRippleModule} from '@angular/material/core';
+import {MatIconModule} from '@angular/material/icon';
 
 
 
@@ -15,6 +16,7 @@ import {MatRippleModule} from '@angular/material/core';
   imports: [
     CommonModule,
     MatRippleModule,
+    MatIconModule,
   ],
 })
 export class CharacterModule { }
