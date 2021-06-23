@@ -1,6 +1,6 @@
 <ng-container *ngIf="(character$|async) as character else loading">
-  <h1>Name: {{character.name}}</h1>
-  <h2>Gender: {{character.gender}}</h2>
-  <h3>Born: {{character.born}}</h3>
+  <div matRipple class="character"><h1>Name: {{character.name}}</h1>
+    <h2>Gender: {{character.gender}}</h2>
+    <h3>Born: {{character.born}}</h3></div>
 </ng-container>
 <ng-template #loading>LOADING</ng-template>

@@ -9,10 +9,11 @@
   
   <h3>Release date: {{book.released | date:'full'}}</h3>
   
-  <h2>Main Characters</h2>
+  <h2 *ngIf="book.povCharacters.length">Main Characters</h2>
+  <mat-divider></mat-divider>
   <app-character *ngFor="let character of book.povCharacters" [characterUrl]="character"></app-character>
 </mat-dialog-content>
 <mat-dialog-actions align="end">
-  <button mat-button mat-dialog-close>Cancel</button>
-  <button mat-button [mat-dialog-close]="true" cdkFocusInitial>Install</button>
+  <button mat-button mat-dialog-close>Close</button>
+  <button mat-button cdkFocusInitial>Add to Favorites <mat-icon>favorite</mat-icon></button>
 </mat-dialog-actions>

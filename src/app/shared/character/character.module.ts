@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CharacterComponent } from './character.component';
+import {MatRippleModule} from '@angular/material/core';
 
 
 
@@ -13,6 +14,7 @@ import { CharacterComponent } from './character.component';
   ],
   imports: [
     CommonModule,
+    MatRippleModule,
   ],
 })
 export class CharacterModule { }
