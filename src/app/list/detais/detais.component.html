@@ -10,7 +10,7 @@
   <h3>Release date: {{book.released | date:'full'}}</h3>
   
   <h2>Main Characters</h2>
-  <p>{{book.povCharacters | json}}</p>
+  <app-character *ngFor="let character of book.povCharacters" [characterUrl]="character"></app-character>
 </mat-dialog-content>
 <mat-dialog-actions align="end">
   <button mat-button mat-dialog-close>Cancel</button>

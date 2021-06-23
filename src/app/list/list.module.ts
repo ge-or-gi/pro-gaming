@@ -9,6 +9,7 @@ import {MatRippleModule} from '@angular/material/core';
 import { DetaisComponent } from './detais/detais.component';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatButtonModule} from '@angular/material/button';
+import {CharacterModule} from '../shared/character/character.module';
 
 
 @NgModule({
@@ -24,6 +25,7 @@ import {MatButtonModule} from '@angular/material/button';
     MatRippleModule,
     MatDialogModule,
     MatButtonModule,
+    CharacterModule,
   ],
 })
 export class ListModule { }
