@@ -1,1 +1,26 @@
-<p>list works!</p>
+<!--<ng-container *ngIf="(data$|async) as books">-->
+<!--  <p *ngFor="let book of books">-->
+<!--    {{book.name}}-->
+<!--  </p>-->
+<!--</ng-container>-->
+
+<table mat-table [dataSource]="data$" class="mat-elevation-z8 list_table__width">
+  <ng-container matColumnDef="name">
+    <th mat-header-cell mat-header-cell *matHeaderCellDef> NAME </th>
+    <td mat-cell mat-cell *matCellDef="let element"> {{element.name}} </td>
+  </ng-container>
+  <ng-container matColumnDef="authors">
+    <th mat-header-cell mat-header-cell *matHeaderCellDef> AUTHORS </th>
+    <td mat-cell mat-cell *matCellDef="let element"> {{element.authors}} </td>
+  </ng-container>
+  <ng-container matColumnDef="country">
+    <th mat-header-cell mat-header-cell *matHeaderCellDef> COUNTRY </th>
+    <td mat-cell mat-cell *matCellDef="let element"> {{element.country}} </td>
+  </ng-container>
+  <ng-container matColumnDef="publisher">
+    <th mat-header-cell mat-header-cell *matHeaderCellDef> PUBLISHER </th>
+    <td mat-cell mat-cell *matCellDef="let element"> {{element.publisher}} </td>
+  </ng-container>
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row matRipple *matRowDef="let row; columns: displayedColumns;" (click)="handleRowClick(row)"></tr>
+</table>

@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {ListService} from './list.service';
+import {Observable} from 'rxjs';
+import {Book} from './book';
 
 @Component({
   selector: 'app-list',
@@ -6,10 +9,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./list.component.scss']
 })
 export class ListComponent implements OnInit {
+  
+  data$: Observable<Book[]> = this.listSvc.getList();
+  displayedColumns: string[] = ['name', 'authors', 'country', 'publisher']
 
-  constructor() { }
+  constructor(private readonly listSvc: ListService) { }
 
   ngOnInit(): void {
   }
 
+  handleRowClick($event: MouseEvent) {
+    console.dir($event)
+  }
 }
