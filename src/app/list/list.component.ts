@@ -18,7 +18,7 @@ export class ListComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  handleRowClick($event: MouseEvent) {
-    console.dir($event)
+  handleRowClick(book: Book) {
+    console.dir(book)
   }
 }
