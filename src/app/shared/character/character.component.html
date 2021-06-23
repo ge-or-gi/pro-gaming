@@ -1,7 +1,11 @@
 <ng-container *ngIf="(character$|async) as character else loading">
   <div matRipple class="character">
-    <h1 matRipple [matRippleCentered]="false" (click)="handleFavorite(character.url)">Name: {{character.name}}
-      <mat-icon [color]="isFavorite ? 'primary' : ''">favorite</mat-icon></h1>
+    <h1 matRipple [matRippleCentered]="false" >Name: {{character.name}}
+      <button mat-icon-button [color]="isFavorite ? 'warn' : null" aria-label="heart icon" (click)="handleFavorite(character.url)">
+        <mat-icon>favorite</mat-icon>
+      </button>
+    </h1>
+    
     <h2>Gender: {{character.gender}}</h2>
     <h3>Born: {{character.born}}</h3></div>
 </ng-container>
