@@ -1,0 +1,14 @@
+<mat-toolbar color="primary">
+  <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+    <mat-icon mat-list-icon>menu</mat-icon>
+  </button>
+  <span>PROGaming assignment</span>
+  <span class="spacer"></span>
+  <button mat-flat-button color="primary" routerLink="list" routerLinkActive="active" >List</button>
+  <button mat-flat-button color="primary" routerLink="about" routerLinkActive="active" >About</button>
+  <button mat-flat-button color="primary" routerLink="favorites" routerLinkActive="active" >Favorites</button>
+</mat-toolbar>
+
+<main>
+  <router-outlet></router-outlet>
+</main>
