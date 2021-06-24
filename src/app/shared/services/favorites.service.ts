@@ -11,8 +11,10 @@ export class FavoritesService {
 
   constructor() { }
 
-  private getFavorites() {
-    return this.favorites
+  getFavorites(): Favorites[]{
+    const favs: Favorites[] = [];
+    this.favorites.forEach(fav => favs.push(fav))
+    return favs;
   }
 
   private addFavorites(url: string, entity: EntitiesTypeEnum, name: string): void {
