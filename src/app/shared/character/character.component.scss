@@ -1,4 +1,9 @@
 .character {
   padding: 0.8rem;
   display: block;
+
+  .name {
+    display: flex;
+    align-items: center;
+  }
 }
