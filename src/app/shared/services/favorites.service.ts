@@ -1,25 +1,28 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
+import {Favorites} from '../../favorites/favorites';
+import {EntitiesTypeEnum} from '../enums/entities-types-enum';
 
 @Injectable({
   providedIn: 'root'
 })
 export class FavoritesService {
 
-  favorites = new Set<string>();
+  favorites = new Map<string, Favorites>();
 
   constructor() { }
 
-  getFavorites() {
+  private getFavorites() {
     return this.favorites
   }
 
-  addFavorites(url: string): void {
+  private addFavorites(url: string, entity: EntitiesTypeEnum, name: string): void {
     const id = this.createId(url);
-    this.favorites.add(id);
+    const favoritesData: Favorites = {url: url, name: name, type: entity}
+    this.favorites.set(id, favoritesData);
     console.log(this.getFavorites())
   }
 
-  removeFavorites(url: string): void {
+  private removeFavorites(url: string): void {
     const id = this.createId(url);
     this.favorites.delete(id);
     console.log(this.getFavorites())
@@ -30,11 +33,11 @@ export class FavoritesService {
     return this.favorites.has(id)
   }
 
-  toggleFavoritesById(url: string): void{
+  toggleFavoritesById(url: string, name: string = 'undefined', entityType: EntitiesTypeEnum = EntitiesTypeEnum.UNDEFINED): void{
     if(this.getFavoritesById(url)) {
       this.removeFavorites(url);
     } else {
-      this.addFavorites(url);
+      this.addFavorites(url, entityType, name);
     }
   }
 

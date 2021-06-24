@@ -3,6 +3,7 @@ import {CharacterService} from './character.service';
 import {Observable} from 'rxjs';
 import {Character} from './character';
 import {FavoritesService} from '../services/favorites.service';
+import {EntitiesTypeEnum} from '../enums/entities-types-enum';
 
 @Component({
   selector: 'app-character',
@@ -23,8 +24,8 @@ export class CharacterComponent implements OnInit {
     this.isFavorite = this.favoritesSvc.getFavoritesById(this.characterUrl);
   }
 
-  handleFavorite(url: string) {
-    this.favoritesSvc.toggleFavoritesById(url);
+  handleFavorite(url: string, name: string) {
+    this.favoritesSvc.toggleFavoritesById(url, name, EntitiesTypeEnum.CHARACTER, );
     this.isFavorite = this.favoritesSvc.getFavoritesById(this.characterUrl);
   }
 }

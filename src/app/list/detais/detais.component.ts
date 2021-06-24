@@ -2,6 +2,7 @@ import {Component, Inject, OnInit} from '@angular/core';
 import {MAT_DIALOG_DATA} from '@angular/material/dialog';
 import {Book} from '../book';
 import {FavoritesService} from '../../shared/services/favorites.service';
+import {EntitiesTypeEnum} from '../../shared/enums/entities-types-enum';
 
 @Component({
   selector: 'app-detais',
@@ -19,13 +20,13 @@ export class DetaisComponent implements OnInit {
     this.isFavorites = this.favoritesSvc.getFavoritesById(this.book.url)
   }
 
-  handleFavorites(url: string) {
+  handleFavorites(url: string, name: string) {
     if(this.favoritesSvc.getFavoritesById(url)) {
       this.isFavorites = false;
       this.favoritesSvc.toggleFavoritesById(url);
     } else {
       this.isFavorites = true;
-      this.favoritesSvc.toggleFavoritesById(url);
+      this.favoritesSvc.toggleFavoritesById(url, name, EntitiesTypeEnum.BOOK);
     }
   }
 }
