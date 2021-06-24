@@ -5,6 +5,7 @@ import { FavoritesRoutingModule } from './favorites-routing.module';
 import { FavoritesComponent } from './favorites.component';
 import {MatTableModule} from '@angular/material/table';
 import {MatRippleModule} from '@angular/material/core';
+import {MatDialogModule} from '@angular/material/dialog';
 
 
 @NgModule({
@@ -16,6 +17,7 @@ import {MatRippleModule} from '@angular/material/core';
     FavoritesRoutingModule,
     MatTableModule,
     MatRippleModule,
+    MatDialogModule,
   ],
 })
 export class FavoritesModule { }

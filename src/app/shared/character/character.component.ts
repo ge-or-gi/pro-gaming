@@ -1,9 +1,11 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Inject, Input, OnInit} from '@angular/core';
 import {CharacterService} from './character.service';
 import {Observable} from 'rxjs';
 import {Character} from './character';
 import {FavoritesService} from '../services/favorites.service';
 import {EntitiesTypeEnum} from '../enums/entities-types-enum';
+import {MAT_DIALOG_DATA} from '@angular/material/dialog';
+import {Book} from '../../list/book';
 
 @Component({
   selector: 'app-character',
@@ -11,15 +13,17 @@ import {EntitiesTypeEnum} from '../enums/entities-types-enum';
   styleUrls: ['./character.component.scss']
 })
 export class CharacterComponent implements OnInit {
-  @Input() characterUrl: string = '';
+  @Input() public characterUrl: string = '';
   isFavorite: boolean = false;
 
   character$!: Observable<Character>;
 
   constructor(private readonly characterSvc: CharacterService,
-              private readonly favoritesSvc: FavoritesService) { }
+              private readonly favoritesSvc: FavoritesService,
+              @Inject(MAT_DIALOG_DATA) public url: string) { }
 
   ngOnInit(): void {
+    if(this.characterUrl === '') this.characterUrl = this.url;
     this.character$ = this.characterSvc.getCharacter(this.characterUrl);
     this.isFavorite = this.favoritesSvc.getFavoritesById(this.characterUrl);
   }
