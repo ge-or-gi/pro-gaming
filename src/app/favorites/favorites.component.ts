@@ -26,8 +26,7 @@ export class FavoritesComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.favorites$ = of(this.favoritesSvc.getFavorites());
-    // console.dir(this.favorites)
+    this.favorites$ = this.favoritesSvc.favoritiesList$;
   }
 
   handleRowClick(row: Favorites) {

@@ -1,6 +1,7 @@
 import {Injectable} from '@angular/core';
 import {Favorites} from '../../favorites/favorites';
 import {EntitiesTypeEnum} from '../enums/entities-types-enum';
+import {BehaviorSubject, Observable, of} from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -9,12 +10,16 @@ export class FavoritesService {
 
   favorites = new Map<string, Favorites>();
 
+  private _favoritiesList$ = new BehaviorSubject<Favorites[]>([]);
+  favoritiesList$ = this._favoritiesList$.asObservable();
+
   constructor() { }
 
-  getFavorites(): Favorites[]{
+  getFavorites(): Observable<Favorites[]>{
     const favs: Favorites[] = [];
     this.favorites.forEach(fav => favs.push(fav))
-    return favs;
+    this._favoritiesList$.next(favs);
+    return of(favs);
   }
 
   private addFavorites(url: string, entity: EntitiesTypeEnum, name: string): void {
