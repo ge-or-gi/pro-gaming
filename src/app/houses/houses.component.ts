@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Observable} from 'rxjs';
-import {Book} from '../books/book';
+import {Book} from '../shared/interfaces/book';
 import {HousesService} from '../shared/services/houses.service';
 import {House} from '../shared/interfaces/house';
 import {DetaisComponent} from '../books/detais/detais.component';
@@ -14,7 +14,7 @@ import {HouseComponent} from './house/house.component';
 })
 export class HousesComponent implements OnInit {
 
-  data$: Observable<House[]> = this.houseSvc.getHouses('https://www.anapioficeandfire.com/api/houses/');
+  data$: Observable<House[]> = this.houseSvc.getHouses('https://www.anapioficeandfire.com/api/houses?page=1&pageSize=100');
   displayedColumns: string[] = ['name', 'region', 'words', 'coatOfArms']
 
 

@@ -1,6 +1,6 @@
 import {Component, Inject, OnInit} from '@angular/core';
 import {MAT_DIALOG_DATA} from '@angular/material/dialog';
-import {Book} from '../book';
+import {Book} from '../../shared/interfaces/book';
 import {FavoritesService} from '../../shared/services/favorites.service';
 import {EntitiesTypeEnum} from '../../shared/enums/entities-types-enum';
 

@@ -1,6 +1,6 @@
 import {Component, Inject, Input, OnInit} from '@angular/core';
 import {Observable} from 'rxjs';
-import {Character} from '../../shared/character/character';
+import {Character} from '../../shared/interfaces/character';
 import {CharacterService} from '../../shared/character/character.service';
 import {FavoritesService} from '../../shared/services/favorites.service';
 import {MAT_DIALOG_DATA} from '@angular/material/dialog';

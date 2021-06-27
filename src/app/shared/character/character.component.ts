@@ -1,11 +1,11 @@
 import {Component, Inject, Input, OnInit} from '@angular/core';
 import {CharacterService} from './character.service';
 import {Observable} from 'rxjs';
-import {Character} from './character';
+import {Character} from '../interfaces/character';
 import {FavoritesService} from '../services/favorites.service';
 import {EntitiesTypeEnum} from '../enums/entities-types-enum';
 import {MAT_DIALOG_DATA} from '@angular/material/dialog';
-import {Book} from '../../books/book';
+import {Book} from '../interfaces/book';
 
 @Component({
   selector: 'app-character',
