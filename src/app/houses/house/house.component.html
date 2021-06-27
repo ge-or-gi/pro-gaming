@@ -7,6 +7,10 @@
     </h1>
     
     <h2>Lord: {{house.currentLord}}</h2>
-    <h3>Founder: {{house.founder}}</h3></div>
+    <h3>Founder: {{house.founder}}</h3>
+    <div *ngFor="let member of house.swornMembers">
+      <app-character [characterUrl]="member"></app-character>
+    </div>
+  </div>
 </ng-container>
 <ng-template #loading>LOADING</ng-template>
