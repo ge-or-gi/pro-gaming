@@ -1,0 +1,10 @@
+.mat-toolbar {
+  &_space {
+    display: flex;
+    justify-content: space-between;
+  }
+  .toolbar-title {
+    display: flex;
+    align-items: center;
+  }
+}
