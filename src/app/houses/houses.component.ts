@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Observable} from 'rxjs';
-import {Book} from '../list/book';
+import {Book} from '../books/book';
 import {HousesService} from '../shared/services/houses.service';
 import {House} from '../shared/interfaces/house';
 

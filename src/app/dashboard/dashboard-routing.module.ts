@@ -4,7 +4,7 @@ import {DashboardComponent} from './dashboard.component';
 
 const routes: Routes = [{
   path: '', component: DashboardComponent, children: [
-    {path: 'books', loadChildren: () => import('../list/list.module').then(m => m.ListModule)},
+    {path: 'books', loadChildren: () => import('../books/list.module').then(m => m.ListModule)},
     {path: 'favorites', loadChildren: () => import('../favorites/favorites.module').then(m => m.FavoritesModule)},
     {path: 'about', loadChildren: () => import('../about/about.module').then(m => m.AboutModule)},
     {path: 'houses', loadChildren: () => import('../houses/houses.module').then(m => m.HousesModule)},

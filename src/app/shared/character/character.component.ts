@@ -5,7 +5,7 @@ import {Character} from './character';
 import {FavoritesService} from '../services/favorites.service';
 import {EntitiesTypeEnum} from '../enums/entities-types-enum';
 import {MAT_DIALOG_DATA} from '@angular/material/dialog';
-import {Book} from '../../list/book';
+import {Book} from '../../books/book';
 
 @Component({
   selector: 'app-character',

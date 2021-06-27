@@ -5,7 +5,7 @@ import {Observable, of} from 'rxjs';
 import {BooksService} from '../shared/services/books.service';
 import {EntitiesTypeEnum} from '../shared/enums/entities-types-enum';
 import {take} from 'rxjs/operators';
-import {DetaisComponent} from '../list/detais/detais.component';
+import {DetaisComponent} from '../books/detais/detais.component';
 import {MatDialog} from '@angular/material/dialog';
 import {CharacterComponent} from '../shared/character/character.component';
 
