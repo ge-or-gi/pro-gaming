@@ -7,6 +7,8 @@ import {MatTableModule} from '@angular/material/table';
 import {MatRippleModule} from '@angular/material/core';
 import {HouseModule} from './house/house.module';
 import {MatDialogModule} from '@angular/material/dialog';
+import {MatPaginatorModule} from '@angular/material/paginator';
+import {MatSortModule} from '@angular/material/sort';
 
 
 @NgModule({
@@ -20,6 +22,8 @@ import {MatDialogModule} from '@angular/material/dialog';
     MatRippleModule,
     MatDialogModule,
     HouseModule,
+    MatPaginatorModule,
+    MatSortModule,
   ],
 })
 export class HousesModule { }
