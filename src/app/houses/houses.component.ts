@@ -28,7 +28,6 @@ export class HousesComponent implements OnInit, AfterViewInit {
     merge(this.paginator.page, this.sort.sortChange).pipe(
       startWith({}),
       switchMap(() => {
-        console.log(this.paginator)
         return this.houseSvc.getHouses(`https://www.anapioficeandfire.com/api/houses?page=
         ${this.paginator.pageIndex+1}&pageSize=${this.paginator.pageSize}`);
       }),

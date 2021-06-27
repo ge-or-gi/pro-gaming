@@ -15,4 +15,8 @@ export class BooksService {
   getBook(url: string): Observable<Book> {
     return this.httpSvc.get<Book>(url);
   }
+
+  getBooks(url: string): Observable<Book[]>{
+    return this.httpSvc.get<Book[]>(url)
+  }
 }
