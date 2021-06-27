@@ -8,6 +8,7 @@ const routes: Routes = [{
     {path: 'favorites', loadChildren: () => import('../favorites/favorites.module').then(m => m.FavoritesModule)},
     {path: 'about', loadChildren: () => import('../about/about.module').then(m => m.AboutModule)},
     {path: 'houses', loadChildren: () => import('../houses/houses.module').then(m => m.HousesModule)},
+    {path: 'characters', loadChildren: () => import('../characters/characters.module').then(m => m.CharactersModule)},
   ],
 },
 
