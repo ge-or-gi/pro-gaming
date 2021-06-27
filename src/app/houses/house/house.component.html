@@ -16,7 +16,10 @@
       
       
       <h2>Lord: {{house.currentLord}}</h2>
+      <app-character [characterUrl]="house.currentLord"></app-character>
       <h3>Founder: {{house.founder}}</h3>
+      <app-character [characterUrl]="house.founder"></app-character>
+      <h1>Members: </h1>
       <div *ngFor="let member of house.swornMembers">
         <app-character [characterUrl]="member"></app-character>
       </div>
