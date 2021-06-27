@@ -1,16 +1,26 @@
 <ng-container *ngIf="(house$|async) as house else loading">
-  <div matRipple class="character">
-    <h1 class="name" matRipple [matRippleCentered]="false" >Name: {{house.name}}
-      <button mat-icon-button [color]="isFavorite ? 'warn' : null" aria-label="heart icon" (click)="handleFavorite(house.url, house.name)">
-        <mat-icon>favorite</mat-icon>
-      </button>
-    </h1>
-    
-    <h2>Lord: {{house.currentLord}}</h2>
-    <h3>Founder: {{house.founder}}</h3>
-    <div *ngFor="let member of house.swornMembers">
-      <app-character [characterUrl]="member"></app-character>
+  <h1 mat-dialog-title
+    class="name"
+    matRipple
+    [matRippleCentered]="false">Name: {{house.name}}
+    <button mat-icon-button
+      [color]="isFavorite ? 'warn' : null"
+      aria-label="heart icon"
+      (click)="handleFavorite(house.url, house.name)">
+      <mat-icon>favorite</mat-icon>
+    </button>
+  </h1>
+  <mat-dialog-content>
+    <div matRipple
+      class="character">
+      
+      
+      <h2>Lord: {{house.currentLord}}</h2>
+      <h3>Founder: {{house.founder}}</h3>
+      <div *ngFor="let member of house.swornMembers">
+        <app-character [characterUrl]="member"></app-character>
+      </div>
     </div>
-  </div>
+  </mat-dialog-content>
 </ng-container>
 <ng-template #loading>LOADING</ng-template>

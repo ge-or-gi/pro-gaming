@@ -4,6 +4,7 @@ import { CharacterComponent } from './character.component';
 import {MatRippleModule} from '@angular/material/core';
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
+import {MatDialogModule} from '@angular/material/dialog';
 
 
 
@@ -19,6 +20,7 @@ import {MatButtonModule} from '@angular/material/button';
     MatRippleModule,
     MatIconModule,
     MatButtonModule,
+    MatDialogModule,
   ],
 })
 export class CharacterModule { }

@@ -5,6 +5,7 @@ import {MatRippleModule} from '@angular/material/core';
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import {CharacterModule} from '../../shared/character/character.module';
+import {MatDialogModule} from '@angular/material/dialog';
 
 
 @NgModule({
@@ -20,6 +21,7 @@ import {CharacterModule} from '../../shared/character/character.module';
     MatIconModule,
     MatButtonModule,
     CharacterModule,
+    MatDialogModule,
   ],
 })
 export class HouseModule {}

@@ -1,12 +1,20 @@
 <ng-container *ngIf="(character$|async) as character else loading">
-  <div matRipple class="character">
-    <h1 class="name" matRipple [matRippleCentered]="false" >Name: {{character.name}}
-      <button mat-icon-button [color]="isFavorite ? 'warn' : null" aria-label="heart icon" (click)="handleFavorite(character.url, character.name)">
-        <mat-icon>favorite</mat-icon>
-      </button>
-    </h1>
-    
-    <h2>Gender: {{character.gender}}</h2>
-    <h3>Born: {{character.born}}</h3></div>
+  <h1 mat-dialog-title
+    class="name"
+    matRipple
+    [matRippleCentered]="false">Name: {{character.name}}
+    <button mat-icon-button
+      [color]="isFavorite ? 'warn' : null"
+      aria-label="heart icon"
+      (click)="handleFavorite(character.url, character.name)">
+      <mat-icon>favorite</mat-icon>
+    </button>
+  </h1>
+  <mat-dialog-content>
+    <div matRipple
+      class="character">
+      <h2>Gender: {{character.gender}}</h2>
+      <h3>Born: {{character.born}}</h3></div>
+  </mat-dialog-content>
 </ng-container>
 <ng-template #loading>LOADING</ng-template>
