@@ -3,6 +3,9 @@ import {Observable} from 'rxjs';
 import {Book} from '../books/book';
 import {HousesService} from '../shared/services/houses.service';
 import {House} from '../shared/interfaces/house';
+import {DetaisComponent} from '../books/detais/detais.component';
+import {MatDialog} from '@angular/material/dialog';
+import {HouseComponent} from './house/house.component';
 
 @Component({
   selector: 'app-houses',
@@ -15,12 +18,14 @@ export class HousesComponent implements OnInit {
   displayedColumns: string[] = ['name', 'region', 'words', 'coatOfArms']
 
 
-  constructor(private readonly houseSvc: HousesService) { }
+  constructor(private readonly houseSvc: HousesService,
+              private readonly dialog: MatDialog) { }
 
   ngOnInit(): void {
   }
 
   handleRowClick(row: House) {
     console.log(row)
+    const modalRef = this.dialog.open(HouseComponent, {data: row.url})
   }
 }

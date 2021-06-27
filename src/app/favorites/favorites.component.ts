@@ -8,6 +8,7 @@ import {take} from 'rxjs/operators';
 import {DetaisComponent} from '../books/detais/detais.component';
 import {MatDialog} from '@angular/material/dialog';
 import {CharacterComponent} from '../shared/character/character.component';
+import {HouseComponent} from '../houses/house/house.component';
 
 @Component({
   selector: 'app-favorites',
@@ -40,6 +41,10 @@ export class FavoritesComponent implements OnInit {
 
     if(row.type === EntitiesTypeEnum.CHARACTER) {
       const modalRef = this.dialog.open(CharacterComponent, {data: row.url});
+    }
+
+    if(row.type === EntitiesTypeEnum.HOUSE) {
+      const modalRef = this.dialog.open(HouseComponent, {data: row.url});
     }
   }
 }

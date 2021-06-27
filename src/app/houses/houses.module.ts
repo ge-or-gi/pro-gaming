@@ -5,6 +5,8 @@ import { HousesRoutingModule } from './houses-routing.module';
 import { HousesComponent } from './houses.component';
 import {MatTableModule} from '@angular/material/table';
 import {MatRippleModule} from '@angular/material/core';
+import {HouseModule} from './house/house.module';
+import {MatDialogModule} from '@angular/material/dialog';
 
 
 @NgModule({
@@ -16,6 +18,8 @@ import {MatRippleModule} from '@angular/material/core';
     HousesRoutingModule,
     MatTableModule,
     MatRippleModule,
+    MatDialogModule,
+    HouseModule,
   ],
 })
 export class HousesModule { }

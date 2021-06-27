@@ -15,4 +15,8 @@ export class HousesService {
   getHouses(url: string): Observable<House[]> {
     return this.httpSvc.get<House[]>(url);
   }
+
+  getHouse(url:  string): Observable<House> {
+    return this.httpSvc.get<House>(url);
+  }
 }
