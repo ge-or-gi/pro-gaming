@@ -18,4 +18,4 @@
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
   <tr mat-row matRipple *matRowDef="let row; columns: displayedColumns;" (click)="handleRowClick(row)"></tr>
 </table>
-<mat-paginator [pageSize]="20" [length]="450"></mat-paginator>
+<mat-paginator [pageSize]="PAGINATOR_ENUM.ITEMS_PER_PAGE" [length]="PAGINATOR_ENUM.ITEMS_LENGTH"></mat-paginator>

@@ -7,6 +7,7 @@ import {startWith, switchMap} from 'rxjs/operators';
 import {MatSort} from '@angular/material/sort';
 import {MatDialog} from '@angular/material/dialog';
 import {CharacterComponent} from './character/character.component';
+import {PaginatorEnum} from './../shared/enums/paginator';
 
 @Component({
   selector: 'app-characters',
@@ -17,6 +18,8 @@ export class CharactersComponent implements OnInit, AfterViewInit {
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
+
+  PAGINATOR_ENUM = PaginatorEnum;
 
   data: Character[] = [];
   displayedColumns: string[] = ['name', 'gender', 'father', 'mother']

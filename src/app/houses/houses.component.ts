@@ -7,6 +7,7 @@ import {MatPaginator} from '@angular/material/paginator';
 import {MatSort} from '@angular/material/sort';
 import {merge} from 'rxjs';
 import {startWith, switchMap} from 'rxjs/operators';
+import {PaginatorEnum} from '../shared/enums/paginator';
 
 @Component({
   selector: 'app-houses',
@@ -20,6 +21,7 @@ export class HousesComponent implements OnInit, AfterViewInit {
 
   data: House[] = [];
   displayedColumns: string[] = ['name', 'region', 'words', 'coatOfArms'];
+  PAGINATOR_ENUM = PaginatorEnum;
 
   constructor(private readonly houseSvc: HousesService,
               private readonly dialog: MatDialog) { }
