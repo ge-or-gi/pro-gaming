@@ -6,7 +6,7 @@ import {merge} from 'rxjs';
 import {startWith, switchMap} from 'rxjs/operators';
 import {MatSort} from '@angular/material/sort';
 import {MatDialog} from '@angular/material/dialog';
-import {CharacterComponent} from '../shared/character/character.component';
+import {CharacterComponent} from './character/character.component';
 
 @Component({
   selector: 'app-characters',

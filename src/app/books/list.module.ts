@@ -9,7 +9,7 @@ import {MatRippleModule} from '@angular/material/core';
 import { DetaisComponent } from './detais/detais.component';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatButtonModule} from '@angular/material/button';
-import {CharacterModule} from '../shared/character/character.module';
+import {CharacterModule} from '../characters/character/character.module';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatIconModule} from '@angular/material/icon';
 

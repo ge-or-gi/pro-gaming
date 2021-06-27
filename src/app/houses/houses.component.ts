@@ -39,6 +39,6 @@ export class HousesComponent implements OnInit, AfterViewInit {
 
   handleRowClick(row: House) {
     console.log(row);
-    const modalRef = this.dialog.open(HouseComponent, {data: row.url});
+    this.dialog.open(HouseComponent, {data: row.url});
   }
 }

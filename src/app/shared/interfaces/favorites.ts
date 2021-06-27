@@ -1,4 +1,4 @@
-import {EntitiesTypeEnum} from '../shared/enums/entities-types-enum';
+import {EntitiesTypeEnum} from '../enums/entities-types-enum';
 
 export interface Favorites {
   name: string;

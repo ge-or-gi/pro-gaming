@@ -6,7 +6,8 @@ import { CharactersComponent } from './characters.component';
 import {MatTableModule} from '@angular/material/table';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatSortModule} from '@angular/material/sort';
-import {MatDialog, MatDialogModule} from '@angular/material/dialog';
+import {MatDialogModule} from '@angular/material/dialog';
+import {MatRippleModule} from '@angular/material/core';
 
 
 @NgModule({
@@ -20,6 +21,7 @@ import {MatDialog, MatDialogModule} from '@angular/material/dialog';
     MatPaginatorModule,
     MatSortModule,
     MatDialogModule,
+    MatRippleModule,
   ],
 })
 export class CharactersModule { }

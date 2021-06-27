@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {Character} from '../interfaces/character';
+import {Character} from '../../shared/interfaces/character';
 import {Observable} from 'rxjs';
 
 @Injectable({

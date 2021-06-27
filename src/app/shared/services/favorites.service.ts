@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {Favorites} from '../../favorites/favorites';
+import {Favorites} from '../interfaces/favorites';
 import {EntitiesTypeEnum} from '../enums/entities-types-enum';
 import {BehaviorSubject, Observable, of} from 'rxjs';
 
