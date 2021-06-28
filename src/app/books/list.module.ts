@@ -12,6 +12,7 @@ import {MatButtonModule} from '@angular/material/button';
 import {CharacterModule} from '../characters/character/character.module';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatIconModule} from '@angular/material/icon';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 
 @NgModule({
@@ -30,6 +31,7 @@ import {MatIconModule} from '@angular/material/icon';
     CharacterModule,
     MatDividerModule,
     MatIconModule,
+    MatProgressSpinnerModule,
   ],
 })
 export class ListModule { }
