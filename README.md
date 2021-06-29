@@ -53,7 +53,7 @@ Start the server
 
 ## Demo
 
-https://ge-or-gi.github.io/pro-gaming/
+https://ge-or-gi.github.io/pro-gaming/dashboard
 
 # ProGamin
 
