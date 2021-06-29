@@ -9,6 +9,7 @@ import {HouseModule} from './house/house.module';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatSortModule} from '@angular/material/sort';
+import {IsLoadingModule} from '../shared/is-loading/is-loading.module';
 
 
 @NgModule({
@@ -24,6 +25,7 @@ import {MatSortModule} from '@angular/material/sort';
     HouseModule,
     MatPaginatorModule,
     MatSortModule,
+    IsLoadingModule,
   ],
 })
 export class HousesModule { }

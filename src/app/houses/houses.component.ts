@@ -6,7 +6,7 @@ import {HouseComponent} from './house/house.component';
 import {MatPaginator} from '@angular/material/paginator';
 import {MatSort} from '@angular/material/sort';
 import {merge} from 'rxjs';
-import {startWith, switchMap} from 'rxjs/operators';
+import {startWith, switchMap, tap} from 'rxjs/operators';
 import {PaginatorEnum} from '../shared/enums/paginator';
 
 @Component({
@@ -19,6 +19,8 @@ export class HousesComponent implements OnInit, AfterViewInit {
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
 
+  isLoading = true;
+
   data: House[] = [];
   displayedColumns: string[] = ['name', 'region', 'words', 'coatOfArms'];
   PAGINATOR_ENUM = PaginatorEnum;
@@ -28,12 +30,16 @@ export class HousesComponent implements OnInit, AfterViewInit {
 
   ngAfterViewInit(): void {
     merge(this.paginator.page, this.sort.sortChange).pipe(
+      tap(() => this.isLoading = true),
       startWith({}),
       switchMap(() => {
         return this.houseSvc.getHouses(`https://www.anapioficeandfire.com/api/houses?page=
-        ${this.paginator.pageIndex+1}&pageSize=${this.paginator.pageSize}`);
+        ${this.paginator.pageIndex + 1}&pageSize=${this.paginator.pageSize}`);
       }),
-    ).subscribe((res: House[]) => this.data = res)
+    ).subscribe((res: House[]) => {
+      this.isLoading = false;
+      this.data = res;
+    });
   }
 
   ngOnInit(): void {
