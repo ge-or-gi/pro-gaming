@@ -8,6 +8,7 @@ import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatSortModule} from '@angular/material/sort';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatRippleModule} from '@angular/material/core';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 
 @NgModule({
@@ -22,6 +23,7 @@ import {MatRippleModule} from '@angular/material/core';
     MatSortModule,
     MatDialogModule,
     MatRippleModule,
+    MatProgressSpinnerModule,
   ],
 })
 export class CharactersModule { }

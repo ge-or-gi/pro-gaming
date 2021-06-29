@@ -13,6 +13,7 @@ import {CharacterModule} from '../characters/character/character.module';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatIconModule} from '@angular/material/icon';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import {IsLoadingModule} from '../shared/is-loading/is-loading.module';
 
 
 @NgModule({
@@ -32,6 +33,7 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
     MatDividerModule,
     MatIconModule,
     MatProgressSpinnerModule,
+    IsLoadingModule,
   ],
 })
 export class ListModule { }
