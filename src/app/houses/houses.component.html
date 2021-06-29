@@ -16,6 +16,6 @@
     <td mat-cell *matCellDef="let element"> {{element.coatOfArms}} </td>
   </ng-container>
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-  <tr mat-row matRipple *matRowDef="let row; columns: displayedColumns;" (click)="handleRowClick(row)"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="handleRowClick(row)"></tr>
 </table>
 <mat-paginator [pageSize]="PAGINATOR_ENUM.ITEMS_PER_PAGE" [length]="PAGINATOR_ENUM.ITEMS_LENGTH"></mat-paginator>
