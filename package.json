@@ -7,7 +7,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "deploy": "ng deploy --base-href=https://ge-or-gi.github.io/pro-gaming/"
+    "deploy": "ng deploy --base-href=https://ge-or-gi.github.io/the-game-of-thrones-db/"
   },
   "private": true,
   "dependencies": {
