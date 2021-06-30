@@ -35,7 +35,7 @@ Clone the project
 Go to the project directory
 
 ```bash
-  cd pro-gaming
+  cd to project :)
 ```
 
 Install dependencies
