@@ -26,13 +26,11 @@ export class FavoritesService {
     const id = this.createId(url);
     const favoritesData: Favorites = {url: url, name: name, type: entity}
     this.favorites.set(id, favoritesData);
-    console.log(this.getFavorites())
   }
 
   private removeFavorites(url: string): void {
     const id = this.createId(url);
     this.favorites.delete(id);
-    console.log(this.getFavorites())
   }
 
   getFavoritesById(url: string): boolean {
