@@ -8,6 +8,7 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
 import {MatButtonModule} from '@angular/material/button';
 import {MatListModule} from '@angular/material/list';
+import {SearchModule} from '../shared/components/search/search.module';
 
 
 @NgModule({
@@ -22,6 +23,7 @@ import {MatListModule} from '@angular/material/list';
     MatProgressBarModule,
     MatButtonModule,
     MatListModule,
+    SearchModule,
   ],
 })
 export class DashboardModule { }
