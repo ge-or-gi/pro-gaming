@@ -16,7 +16,7 @@ import {PaginatorEnum} from '../shared/enums/paginator';
 })
 export class HousesComponent implements OnInit, AfterViewInit {
 
-  @ViewChild(MatPaginator) paginator!: MatPaginator;
+  @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator | undefined;
   @ViewChild(MatSort) sort!: MatSort;
 
   isLoading = true;
@@ -29,17 +29,19 @@ export class HousesComponent implements OnInit, AfterViewInit {
               private readonly dialog: MatDialog) { }
 
   ngAfterViewInit(): void {
-    merge(this.paginator.page, this.sort.sortChange).pipe(
-      tap(() => this.isLoading = true),
-      startWith({}),
-      switchMap(() => {
-        return this.houseSvc.getHouses(`https://www.anapioficeandfire.com/api/houses?page=
-        ${this.paginator.pageIndex + 1}&pageSize=${this.paginator.pageSize}`);
-      }),
-    ).subscribe((res: House[]) => {
-      this.isLoading = false;
-      this.data = res;
-    });
+    if (this.paginator) {
+      merge(this.paginator.page, this.sort.sortChange).pipe(
+        tap(() => this.isLoading = true),
+        startWith({}),
+        switchMap(() => {
+          return this.houseSvc.getHouses(`https://www.anapioficeandfire.com/api/houses?page=
+          ${(this.paginator?.pageIndex ?? 0) + 1}&pageSize=${this.paginator?.pageSize ?? 0}`);
+        }),
+      ).subscribe((res: House[]) => {
+        this.isLoading = false;
+        this.data = res;
+      });
+    }
   }
 
   ngOnInit(): void {
