@@ -1,4 +1,4 @@
-# Pro Gaming assignmen
+# Assignmen
 
 pick an open api
 (https://anapioficeandfire.com/) to prepare a SPA with Angular.
