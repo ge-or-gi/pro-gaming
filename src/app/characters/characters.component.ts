@@ -7,7 +7,7 @@ import {startWith, switchMap, tap} from 'rxjs/operators';
 import {MatSort} from '@angular/material/sort';
 import {MatDialog} from '@angular/material/dialog';
 import {CharacterComponent} from './character/character.component';
-import {PaginatorEnum} from './../shared/enums/paginator';
+import {PaginatorEnum} from '../shared/enums/paginator';
 
 @Component({
   selector: 'app-characters',
@@ -16,7 +16,7 @@ import {PaginatorEnum} from './../shared/enums/paginator';
 })
 export class CharactersComponent implements OnInit, AfterViewInit {
 
-  @ViewChild(MatPaginator, {static: true}) paginator!: MatPaginator;
+  @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator | undefined;
   @ViewChild(MatSort) sort!: MatSort;
 
   PAGINATOR_ENUM = PaginatorEnum;
@@ -27,7 +27,8 @@ export class CharactersComponent implements OnInit, AfterViewInit {
   displayedColumns: string[] = ['name', 'gender', 'father', 'mother'];
 
   constructor(private readonly charactersSvc: CharactersService,
-              private readonly dialog: MatDialog) { }
+              private readonly dialog: MatDialog) {
+  }
 
   ngOnInit(): void {
   }
@@ -37,15 +38,17 @@ export class CharactersComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit(): void {
-    merge(this.paginator.page).pipe(
-      tap(()=>this.isLoading = true),
-      startWith({}),
-      switchMap(() => {
-        return this.charactersSvc.getCharacters(`https://www.anapioficeandfire.com/api/characters?page=${this.paginator.pageIndex + 1}&pageSize=${this.paginator.pageSize}`);
-      }),
-    ).subscribe((res: Character[]) => {
-      this.data = res;
-      this.isLoading = false
-    });
+    if (this.paginator) {
+      merge(this.paginator.page).pipe(
+        tap(() => this.isLoading = true),
+        startWith({}),
+        switchMap(() => {
+          return this.charactersSvc.getCharacters(`https://www.anapioficeandfire.com/api/characters?page=${1 + (this.paginator?.pageIndex ?? 0)}&pageSize=${this.paginator?.pageSize ?? this.PAGINATOR_ENUM.ITEMS_PER_PAGE}`);
+        }),
+      ).subscribe((res: Character[]) => {
+        this.data = res;
+        this.isLoading = false
+      });
+    }
   }
 }
