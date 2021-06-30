@@ -29,13 +29,13 @@ the nice to have:
 Clone the project
 
 ```bash
-  git clone https://github.com/ge-or-gi/pro-gaming.git
+  git clone https://github.com/ge-or-gi/the-game-of-thrones-db.git
 ```
 
 Go to the project directory
 
 ```bash
-  cd pro-gaming
+  cd to project :)
 ```
 
 Install dependencies
@@ -53,9 +53,9 @@ Start the server
 
 ## Demo
 
-https://ge-or-gi.github.io/pro-gaming/dashboard
+https://ge-or-gi.github.io/the-game-of-thrones-db/dashboard
 
-# ProGamin
+# THE GAME OF THRONES DB
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.0.5.
 
