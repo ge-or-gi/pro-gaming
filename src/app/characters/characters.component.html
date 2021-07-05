@@ -21,14 +21,18 @@
         *matHeaderCellDef> FATHER
       </th>
       <td mat-cell
-        *matCellDef="let element"> {{element.father}} </td>
+        *matCellDef="let element">
+        <button mat-raised-button mat-button (click)="handleCellClick($event, element, gender.MALE)">{{element.father}}</button>
+      </td>
     </ng-container>
     <ng-container matColumnDef="mother">
       <th mat-header-cell
         *matHeaderCellDef>MOTHER
       </th>
       <td mat-cell
-        *matCellDef="let element"> {{element.mother}} </td>
+        *matCellDef="let element">
+        <button mat-raised-button mat-button (click)="handleCellClick($event, element, gender.FEMALE)">{{element.mother}}</button>
+      </td>
     </ng-container>
     <tr mat-header-row
       *matHeaderRowDef="displayedColumns"></tr>

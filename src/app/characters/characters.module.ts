@@ -10,6 +10,7 @@ import {MatDialogModule} from '@angular/material/dialog';
 import {MatRippleModule} from '@angular/material/core';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {IsLoadingModule} from '../shared/is-loading/is-loading.module';
+import {MatButtonModule} from '@angular/material/button';
 
 
 @NgModule({
@@ -26,6 +27,7 @@ import {IsLoadingModule} from '../shared/is-loading/is-loading.module';
     MatRippleModule,
     MatProgressSpinnerModule,
     IsLoadingModule,
+    MatButtonModule,
   ],
 })
 export class CharactersModule { }

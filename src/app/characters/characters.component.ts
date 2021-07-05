@@ -39,6 +39,7 @@ import {
 import {
   SearcService,
 } from '../shared/components/search/searc.service';
+import {Gender} from '../shared/enums/gender';
 
 @Component({
   selector: 'app-characters',
@@ -59,6 +60,8 @@ export class CharactersComponent implements OnInit, AfterViewInit {
   data: Character[] = [];
   displayedColumns: string[] = ['name', 'gender', 'father', 'mother'];
 
+  gender = Gender;
+
   constructor(private readonly charactersSvc: CharactersService,
               private readonly searSvc: SearcService,
               private readonly dialog: MatDialog) { }
@@ -66,6 +69,7 @@ export class CharactersComponent implements OnInit, AfterViewInit {
   ngOnInit(): void { }
 
   handleRowClick(row: Character) {
+    console.log(row)
     const dialogRef = this.dialog.open(CharacterComponent, {
       data: row.url,
     });
@@ -85,5 +89,32 @@ export class CharactersComponent implements OnInit, AfterViewInit {
         this.isLoading = false;
       });
     }
+  }
+
+  handleCellClick(event: Event, character: Character, gender: Gender) {
+
+
+    event.stopPropagation();
+
+    switch (gender) {
+      case Gender.MALE:
+        this.dialog.open(CharacterComponent, {
+          data: character.father,
+        });
+        break;
+
+      case Gender.FEMALE:
+        this.dialog.open(CharacterComponent, {
+          data: character.mother,
+        });
+        break;
+
+      default:
+        console.log('not implemented')
+    }
+
+    console.log(event)
+    console.log(character)
+
   }
 }
