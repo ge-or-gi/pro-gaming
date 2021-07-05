@@ -1,7 +1,16 @@
-<form ngForm>
-  <mat-form-field appearance="outline"
-    floatLabel="auto" class="search">
-    <mat-label>Search</mat-label>
-    <input matInput [formControl]="search">
-  </mat-form-field>
-</form>
+<mat-form-field appearance="outline"
+  floatLabel="auto"
+  class="search">
+  <mat-label>Search</mat-label>
+  <input #element
+    matInput
+    [formControl]="search">
+  <button *ngIf="element.value"
+    matSuffix
+    mat-icon-button
+    aria-label="Clear"
+    (click)="search.patchValue('')">
+    <mat-icon>close</mat-icon>
+  </button>
+</mat-form-field>
+`

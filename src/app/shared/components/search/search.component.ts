@@ -30,4 +30,7 @@ export class SearchComponent implements OnInit, OnDestroy {
     })
   }
 
+  onSubmit($event: any) {
+
+  }
 }
